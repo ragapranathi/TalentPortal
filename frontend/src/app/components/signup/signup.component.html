@@ -1,0 +1,83 @@
+<div class="signup">
+    <div class="container">
+        <div class="signup-content">
+            <h1>SIGN UP</h1>
+            <form [formGroup]="signupForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="fullname" placeholder="Enter your name">
+                    <mat-hint>Enter your name</mat-hint>
+                    <mat-error *ngIf="signupForm.get('fullname')?.hasError('required')">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email" placeholder="E-mail">
+                    <mat-hint>Enter your E-mail ID</mat-hint>
+                    <mat-error *ngIf="signupForm.get('email')?.hasError('required')">
+                        Name is required
+                    </mat-error>
+                    <mat-error *ngIf="signupForm.get('email')?.hasError('email')">
+                        Please enter a valid email address
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username" placeholder="Enter yor username">
+                    <mat-hint>Enter a unique username</mat-hint>
+                    <mat-error *ngIf="signupForm.get('username')?.hasError('required')">
+                        Username is required
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" placeholder="Enter your password" >
+                     <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]= "'Hide password'" [attr.aria-pressed]= "hidePassword">
+                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-hint>Enter a strong password</mat-hint>
+                    <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
+                        Password is required
+                    </mat-error>
+                </mat-form-field> -->
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password"
+                        placeholder="Enter your password">
+                    <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-hint>Enter a strong password</mat-hint>
+                    <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput type="password" placeholder="Confirm your password">
+                    <mat-hint>Enter the same password</mat-hint>
+                    <mat-error *ngIf="signupForm.get('conpassword')?.hasError('required')">
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+                <div class="btn-signup">
+                    <div class="text">
+                        <p>Already a member? <a routerLink="/login">Login</a></p>
+                    </div>
+                    <div class="signup-btn">
+                        <button mat-raised-button color="primary" [disabled]="signupForm.invalid" (click)="onSubmit()"
+                            [matTooltip]="signupForm.invalid ? 'Please fill all required fields' : 'Click to sign up'">
+                            Sign up
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

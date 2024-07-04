@@ -1,0 +1,95 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.header {
+    mat-toolbar {
+        position: sticky;
+        position: -webkit-sticky;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.logo,
+.nav-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        cursor: pointer;
+        height: 40px
+    }
+
+}
+
+.act-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidenav-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* Changed from center to stretch */
+    gap: 8px;
+    padding: 16px;
+    /* Add some padding around the buttons */
+}
+
+.sidenav-btn {
+    width: 100%;
+    /* Make buttons take full width of their container */
+}
+
+mat-sidenav {
+    padding: 16px;
+}
+
+mat-sidenav-container {
+    flex: 1;
+}
+
+mat-sidenav-content {
+    flex: 1;
+    height: calc(100vh - 64px);
+    background-size: 100% 100%;
+}
+
+.btn-toggle {
+    display: block;
+}
+
+.mat-elevation-z6 {
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+
+@media(min-width:576px) {
+    .btn-toggle {
+        display: none;
+    }
+}
+
+@media(max-width:576px) {
+    .act-btn {
+        display: none
+    }
+}
+
+@media(max-width:576px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media(min-width:576px) {
+    .nav-logo {
+        display: none
+    }
+}

@@ -1,0 +1,48 @@
+<div class="header">
+
+
+  <mat-toolbar class="mat-elevation-z6">
+    <button class="btn-toggle" mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>
+        menu
+      </mat-icon>
+    </button>
+    <div class="logo" routerLink="/home">
+      <img src="../assets/Images/talentSmartLogo.png">
+    </div>
+
+    <span class="example-spacer"></span>
+    <div class="nav-logo">
+
+      <img src="../assets/Images/talentSmartLogo.png">
+    </div>
+    <section>
+
+      <div class="act-btn">
+        <button mat-raised-button routerLink="/login">Login</button>
+        <button mat-raised-button color="primary" routerLink="/signup">Sign up</button>
+      </div>
+    </section>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+
+      <mat-nav-list>
+        <div class="sidenav-btns">
+          <button mat-raised-button routerLink="/login">Login</button>
+          <button mat-raised-button color="primary" routerLink="/signup">Sign up</button>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="welcome-txt">
+        <router-outlet></router-outlet>
+      </div>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

@@ -1,0 +1,29 @@
+.login{
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container{
+        width: 100%;
+        max-width: 400px; // Adjust this value as needed
+        padding: 20px;
+        h1{
+            font-size: 2rem;
+            color: rgb(9, 9, 189);
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap : 8px;
+            mat-form-field {
+                    width: 100%;
+                }
+            .login-btn{
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+            }
+        }
+        }
+}

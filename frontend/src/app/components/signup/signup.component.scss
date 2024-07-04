@@ -1,0 +1,35 @@
+.signup {
+    .container {
+        height: calc(100vh - 64px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .signup-content {
+            width: 100%;
+            max-width: 400px; // Adjust this value as needed
+            padding: 20px;
+
+            h1 {
+                font-size: 2rem; // Adjust size as needed
+                color: rgb(9, 9, 189);
+                // margin-bottom: 20px;
+                text-align: center;
+            }
+
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .btn-signup {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+            }
+        }
+    }
+}
